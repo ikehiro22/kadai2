@@ -1,0 +1,17 @@
+<h1>New book</h1>
+<% if @list.errors.any? %>
+  <% @list.errors.full_messages.each do |message| %>
+              <div class="form-error">
+                <%= message %>
+              </div>
+  <% end %>
+<% end %>
+  
+<%= form_for(@list, url: "/posts/#{@list.id}/update") do |f| %>
+  <h4>title</h4>
+  	<%= f.text_field :title, placeholder: "@list.title" %>
+  <h4>body</h4>
+  	<%= f.text_area :body, placeholder: "@list.body" %>
+<%= f.submit 'create book' %>
+
+<% end %>

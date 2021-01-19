@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+    <div class="flash">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
+
+<p>title:<%= @list.title %></p>
+<p>body:<%= @list.body %></p>
+
+<%= link_to("back", "/posts/index") %>
+
+<%= link_to("edit", "/posts/#{@list.id}/edit") %>
